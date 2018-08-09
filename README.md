@@ -1,4 +1,4 @@
-## OPENSHIFT ORIGIN V3.9 PIPELINE WITH JENKINS
+## OPENSHIFT ORIGIN V3.9 PIPELINE WITH JENKINS DEMO
 ![](jenkinspipeline.PNG)
 
 
@@ -34,18 +34,20 @@ once it completed Edit "Jenkins Pipeline Configuration" and replace the content 
 ```
 
 create a new Build Configuration and Deployment Configuration in `cicd project` & `dev project`
-```
+
 #create New php application from webconsole
 php template > advanced option 
-Name:myphp
-Git Repository URL:https://github.com/venatrix/bg-demo.git
-```
+Name: `myphp`
+Git Repository URL:`https://github.com/venatrix/bg-demo.git`
+
 uncheck following options:-
-```
 In Build Configuration:-
+```
     Automatically build a new image when the builder image changes
     Launch the first build when the build configuration is created
+```
 and Deployment Configuration:-
+```
     New image is available
     Deployment configuration changes
 create
@@ -54,11 +56,13 @@ Do the same in project `dev`
 
 To create a deployment configuration in the `stage` project that points to the image from development project, create a service and route:
 
+From cli `oc project stage`
 To check the `<<RegistryServiceIP>>` :-
 project `dev` > builds > images - docker repo 
 ```
 oc create deploymentconfig myapp --image=<<RegistryServiceIP>>:5000/dev/myapp:promote
 ```
+Create service and route 
 ```
 oc expose dc myapp --port=8080
 oc expose svc myapp
