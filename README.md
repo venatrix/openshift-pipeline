@@ -27,8 +27,9 @@ Grant Image Pull access to stage project from dev, so that `stage` project can p
 
 start working with cicd project,
 
-```
 oc project cicd
+```
+
 #create New Jenkins Pipeline BuildConfiguration from webconsole
 Add to project > import yaml/json > copy the content from pipeline.yaml > create.
 
@@ -66,7 +67,9 @@ change to stage project
 To create a deployment configuration in the `stage` project that points to the image from development project, create a service and route:
 
 From cli `oc project stage`
+
 To check the `<<RegistryServiceIP>>` :-
+
 project `dev` > builds > images - docker repo 
 ```
 oc create deploymentconfig myapp --image=<<RegistryServiceIP>>:5000/dev/myapp:promote
