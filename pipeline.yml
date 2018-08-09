@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: BuildConfig
 metadata:
-  name: myfirstpipeline
+  name: php-pipeline
   labels:
-    name: myfirstpipeline
+    name: php-pipeline
   annotations:
     pipeline.alpha.openshift.io/uses: '[{"name": "myphp", "namespace": "", "kind": "DeploymentConfig"}]'
 spec:
