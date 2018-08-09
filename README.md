@@ -15,7 +15,7 @@ The initial Jenkinsfile is [https://github.com/VeerMuchandi/pipeline-example/blo
 The edited Jenkinsfile is [https://github.com/VeerMuchandi/pipeline-example/blob/master/Jenkinsfile2.txt]()
 
 
-In this `example`, the pipeline runs in the CICD Project.  We will build and deploy an application first in a project named 'Development'. Later we will push the image created into a project named 'Testing'.
+In this example, the pipeline runs in the CICD Project.  We will build and deploy an application first in a project named 'Development'. Later we will push the image created into a project named 'Testing'.
 
 ![](pipelines_example.tiff)
 
