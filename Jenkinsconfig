@@ -9,3 +9,4 @@ openshiftTag(namespace: 'dev', sourceStream: 'myapp',  sourceTag: 'latest', dest
 openshiftDeploy(namespace: 'stage', deploymentConfig: 'myapp', )
 openshiftScale(namespace: 'stage', deploymentConfig: 'myapp',replicaCount: '3')
 }
+
