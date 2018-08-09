@@ -35,8 +35,7 @@ once it completed Edit "Jenkins Pipeline Configuration" and replace the content 
 ```
 
 create a new Build Configuration and Deployment Configuration in `cicd project` & `dev project`
-
-create New php application from webconsole
+`create New php application from webconsole`
 php template > advanced option 
 
 Name: `myphp`
