@@ -73,6 +73,6 @@ cancel the `deployment` runs in project `stage`
 
 once all the above setup completed, start pipeline from project `cicd` builds > pipelines - start pipeline
 
-# Login to Jenkins Dashboard by using openshift Credentials :) 
+## Login to Jenkins Dashboard by using openshift Credentials :) 
 
 
