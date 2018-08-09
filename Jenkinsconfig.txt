@@ -1,9 +1,4 @@
 node('') {
-stage 'build'
-openshiftBuild(buildConfig: 'myphp', showBuildLogs: 'true')
-stage 'deploy'
-openshiftDeploy(deploymentConfig: 'myphp')
-openshiftScale(deploymentConfig: 'myphp',replicaCount: '2')    
 stage 'buildInDevelopment'
 openshiftBuild(namespace: 'dev', buildConfig: 'myapp', showBuildLogs: 'true')
 stage 'deployInDevelopment'
