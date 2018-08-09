@@ -45,7 +45,7 @@ create a new Build Configuration and Deployment Configuration in `dev project`
 
 `php template > advanced option` 
 
-Name: `myphp`
+Name: `myapp`
 
 Git Repository URL:`https://github.com/venatrix/bg-demo.git`
 
