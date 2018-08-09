@@ -37,7 +37,9 @@ create a new Build Configuration and Deployment Configuration in `cicd project` 
 
 #create New php application from webconsole
 php template > advanced option 
+
 Name: `myphp`
+
 Git Repository URL:`https://github.com/venatrix/bg-demo.git`
 
 uncheck following options:-
