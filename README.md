@@ -49,16 +49,18 @@ Name: `myapp`
 
 Git Repository URL:`https://github.com/venatrix/bg-demo.git`
 
-uncheck following options:-
+`uncheck following options:-`
+
 In Build Configuration:-
 ```
-    Automatically build a new image when the builder image changes
-    Launch the first build when the build configuration is created
+Automatically build a new image when the builder image changes
+Launch the first build when the build configuration is created
 ```
 and Deployment Configuration:-
 ```
-    New image is available
-    Deployment configuration changes
+New image is available
+Deployment configuration changes
+
 create
 ```
 
