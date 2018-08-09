@@ -76,6 +76,23 @@ project `dev` > builds > images - docker repo
 ```
 oc create deploymentconfig myapp --image=<<RegistryServiceIP>>:5000/dev/myapp:promote
 ```
+ edit dc myapp and make the following changes
+ 
+```
+from
+ triggers:
+    - type: ConfigChange
+to 
+  triggers:
+```
+and 
+
+```
+from 
+    imagePullPolicy: IfNotPresent
+to 
+  imagePullPolicy: Always
+```
 Create service and route 
 ```
 oc expose dc myapp --port=8080
