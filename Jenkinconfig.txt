@@ -10,7 +10,7 @@ stage 'deployInDevelopment'
 openshiftDeploy(namespace: 'dev', deploymentConfig: 'myapp')
 openshiftScale(namespace: 'dev', deploymentConfig: 'myapp',replicaCount: '2')
 stage 'deployInStaging'
-openshiftTag(namespace: 'dev', sourceStream: 'myapp',  sourceTag: 'latest', destinationStream: 'myapp', destinationTag: 'promoteToQA')
+openshiftTag(namespace: 'dev', sourceStream: 'myapp',  sourceTag: 'latest', destinationStream: 'myapp', destinationTag: 'promote')
 openshiftDeploy(namespace: 'stage', deploymentConfig: 'myapp', )
 openshiftScale(namespace: 'stage', deploymentConfig: 'myapp',replicaCount: '3')
 }
