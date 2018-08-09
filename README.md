@@ -1,54 +1,68 @@
 ## Creating your own pipeline
 
-
-### Video 1: Creating your own pipeline
-
-The build configuration used for creating the pipeline is 
-[https://github.com/VeerMuchandi/pipeline-example/blob/master/pipeline.yml]()
-
-
-
-### Video 2: Edit the pipeline to deploy across projects 
-
-The initial Jenkinsfile is [https://github.com/VeerMuchandi/pipeline-example/blob/master/Jenkinsfile1.txt]()
-
-The edited Jenkinsfile is [https://github.com/VeerMuchandi/pipeline-example/blob/master/Jenkinsfile2.txt]()
-
-
-In this example, the pipeline runs in the CICD Project.  We will build and deploy an application first in a project named 'Development'. Later we will push the image created into a project named 'Testing'.
+In this example, the pipeline runs in the CICD Project.  We will build and deploy an application first in a project named 'Dev'. Later we will push the image created into a project named 'stage'.
 
 ![](pipelines_example.tiff)
 
-
 Here are the commands I used from the OpenShift CLI:
 
-Creating a `development` Project and to provide `edit` access to the `jenkins` service account in the `development` project.
+Create the following projects for CI/CD components, Dev and Stage environments:
 
 ```
-oc new-project development
+# Create Projects
+oc new-project cicd --display-name="CI/CD"
+oc new-project dev --display-name="Tasks - Dev"
+oc new-project stage --display-name="Tasks - Stage"
 
-oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n development
-```
+# Grant Jenkins Access to Projects
+oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n dev
+oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n stage
 
-Creating a `testing` Project . Provide `edit` access to the `jenkins` service account in the `testing` project. Then provide `image-puller` access, so that `testing` project can pull an image from the `development` project.
-
-```
-oc new-project testing
-
-oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n testing
-
-oc policy add-role-to-group system:image-puller system:serviceaccounts:testing -n development
-```
-
-To create a deployment configuration in the `testing` project that points to the image from development project, create a service and route:
+# Grant Image Pull access to stage project from dev, so that `stage` project can pull an image from the `dev` project.
+oc policy add-role-to-user system:image-puller system:serviceaccount:stage:default -n develop
 
 ```
-oc create deploymentconfig myapp --image=<<RegistryServiceIP>>:5000/development/myapp:promoteToQA
+start working with cicd project,
 
+```
+oc project cicd
+#create New Jenkins Pipeline from webconsole
+Add to project > import yaml/json > copy the content from pipeline.yaml > create.
+
+once it completed Edit "Jenkins Pipeline Configuration" and replace the content with Jenkinsconfig.txt
+```
+
+create a new Build Configuration and Deployment Configuration in `cicd project` & `dev project`
+```
+#create New php application from webconsole
+php template > advanced option 
+Name:myphp
+Git Repository URL:https://github.com/venatrix/bg-demo.git
+#uncheck following options, so jenkins can control the bc & dc
+In Build Configuration:-
+    Automatically build a new image when the builder image changes
+    Launch the first build when the build configuration is created
+and Deployment Configuration:-
+    New image is available
+    Deployment configuration changes
+```
+`Do the same in dev project `
+
+To create a deployment configuration in the `stage` project that points to the image from development project, create a service and route:
+
+```
+oc create deploymentconfig myapp --image=<<RegistryServiceIP>>:5000/dev/myapp:promote
+To check the <<RegistryServiceIP>> :
+```
+project `dev > builds > images - docker repo`
+```
 oc expose dc myapp --port=8080
 
 oc expose svc myapp
 
 ```
+once all the above setup completed, start pipeline from project `cicd` builds > pipelines - start pipeline
+
+#Thank you
 
 
