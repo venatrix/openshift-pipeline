@@ -10,18 +10,18 @@ Here are the commands I used from the OpenShift CLI:
 Create the following projects for CI/CD components, Dev and Stage environments:
 
 
-# Create Projects
+Create Projects
 ```
 oc new-project cicd --display-name="CI/CD"
 oc new-project dev --display-name="Tasks - Dev"
 oc new-project stage --display-name="Tasks - Stage"
 ```
-# Grant Jenkins Access to Projects
+Grant Jenkins Access to Projects
 ```
 oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n dev
 oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n stage
 ```
-# Grant Image Pull access to stage project from dev, so that `stage` project can pull an image from the `dev` project.
+Grant Image Pull access to stage project from dev, so that `stage` project can pull an image from the `dev` project.
 `oc policy add-role-to-user system:image-puller system:serviceaccount:stage:default -n dev`
 
 start working with cicd project,
@@ -36,7 +36,7 @@ once it completed Edit "Jenkins Pipeline Configuration" and replace the content 
 
 create a new Build Configuration and Deployment Configuration in `cicd project` & `dev project`
 
-#create New php application from webconsole
+create New php application from webconsole
 php template > advanced option 
 
 Name: `myphp`
