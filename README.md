@@ -24,7 +24,7 @@ start working with cicd project,
 
 ```
 oc project cicd
-#create New Jenkins Pipeline from webconsole
+#create New Jenkins Pipeline BuildConfiguration from webconsole
 Add to project > import yaml/json > copy the content from pipeline.yaml > create.
 
 once it completed Edit "Jenkins Pipeline Configuration" and replace the content with Jenkinsconfig.txt
