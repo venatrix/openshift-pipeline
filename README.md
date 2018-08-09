@@ -50,12 +50,15 @@ create
 Do the same in project `dev`
 
 To create a deployment configuration in the `stage` project that points to the image from development project, create a service and route:
-`oc create deploymentconfig myapp --image=<<RegistryServiceIP>>:5000/dev/myapp:promote`
-
+```
+oc create deploymentconfig myapp --image=<<RegistryServiceIP>>:5000/dev/myapp:promote
+```
 To check the <<RegistryServiceIP>> :
 project `dev` > builds > images - docker repo    
-`oc expose dc myapp --port=8080`
-`oc expose svc myapp`
+```
+oc expose dc myapp --port=8080
+oc expose svc myapp
+```
 once all the above setup completed, start pipeline from project `cicd` builds > pipelines - start pipeline
 
 #Thank you
