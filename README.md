@@ -1,4 +1,7 @@
 ## OPENSHIFT PIPELINE WITH JENKINS
+![](jenkinspipeline.PNG)
+
+
 
 In this example, the pipeline runs in the CICD Project.  We will build and deploy an application project named `cicd` & `Dev`, and  we will push the image created into a project named `stage`.
 
