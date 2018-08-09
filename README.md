@@ -1,7 +1,5 @@
 ## Creating your own pipeline
-
 In this example, the pipeline runs in the CICD Project.  We will build and deploy an application first in a project named 'Dev'. Later we will push the image created into a project named 'stage'.
-
 ![](pipelines_example.tiff)
 
 Here are the commands I used from the OpenShift CLI:
