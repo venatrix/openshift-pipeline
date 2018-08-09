@@ -37,7 +37,7 @@ php template > advanced option
 Name:myphp
 Git Repository URL:https://github.com/venatrix/bg-demo.git
 ```
-#uncheck following options, so jenkins can control the bc & dc
+uncheck following options:-
 ```
 In Build Configuration:-
     Automatically build a new image when the builder image changes
@@ -45,6 +45,7 @@ In Build Configuration:-
 and Deployment Configuration:-
     New image is available
     Deployment configuration changes
+create
 ```
 `Do the same in dev project `
 
