@@ -64,6 +64,7 @@ project `dev` > builds > images - docker repo
 oc expose dc myapp --port=8080
 oc expose svc myapp
 ```
+cancel the `deployment` runs in project `stage`
 once all the above setup completed, start pipeline from project `cicd` builds > pipelines - start pipeline
 
 #Thank you
