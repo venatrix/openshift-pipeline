@@ -53,8 +53,8 @@ To create a deployment configuration in the `stage` project that points to the i
 ```
 oc create deploymentconfig myapp --image=<<RegistryServiceIP>>:5000/dev/myapp:promote
 ```
-To check the <<RegistryServiceIP>> :
-project `dev` > builds > images - docker repo    
+To check the <<RegistryServiceIP>> :-
+project `dev` > builds > images - docker repo  
 ```
 oc expose dc myapp --port=8080
 oc expose svc myapp
