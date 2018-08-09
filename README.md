@@ -1,5 +1,5 @@
 ## OPENSHIFT PIPELINE WITH JENKINS
-In this example, the pipeline runs in the CICD Project.  We will build and deploy an application project named `cicd & Dev`, and  we will push the image created into a project named 'stage'.
+In this example, the pipeline runs in the CICD Project.  We will build and deploy an application project named `cicd` & `Dev`, and  we will push the image created into a project named `stage`.
 ![](pipelines_example.tiff)
 
 Here are the commands I used from the OpenShift CLI:
