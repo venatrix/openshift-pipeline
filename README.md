@@ -22,6 +22,7 @@ oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n dev
 oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n stage
 ```
 Grant Image Pull access to stage project from dev, so that `stage` project can pull an image from the `dev` project.
+
 `oc policy add-role-to-user system:image-puller system:serviceaccount:stage:default -n dev`
 
 start working with cicd project,
