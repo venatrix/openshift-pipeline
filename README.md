@@ -3,7 +3,7 @@
 
 
 
-In this example, the pipeline runs in the CICD Project.  We will build and deploy an application project named `cicd` & `Dev`, and  we will push the image created into a project named `stage`.
+In this example, the pipeline runs in the CICD Project.  We will build and deploy an application project named `Dev`, and  we will push the image created into a project named `stage`.
 
 Here are the commands I used from the OpenShift CLI:
 
@@ -35,9 +35,11 @@ Add to project > import yaml/json > copy the content from pipeline.yaml > create
 once it completed Edit "Jenkins Pipeline Configuration" and replace the content with Jenkinsconfig.txt
 ```
 
-create a new Build Configuration and Deployment Configuration in `cicd project` & `dev project`
+oc project `dev`
+
+create a new Build Configuration and Deployment Configuration in `dev project`
 `create New php application from webconsole`
-php template > advanced option 
+`php template > advanced option` 
 
 Name: `myphp`
 
@@ -55,7 +57,6 @@ and Deployment Configuration:-
     Deployment configuration changes
 create
 ```
-Do the same in project `dev`
 
 To create a deployment configuration in the `stage` project that points to the image from development project, create a service and route:
 
