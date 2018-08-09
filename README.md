@@ -33,7 +33,7 @@ oc project cicd
 #create New Jenkins Pipeline BuildConfiguration from webconsole
 Add to project > import yaml/json > copy the content from pipeline.yaml > create.
 
-once it completed Edit "Jenkins Pipeline Configuration" and replace the content with Jenkinsconfig.txt
+once it completed Edit "Jenkins Pipeline Configuration" and replace the content with Jenkinsconfig file
 ```
 change to dev project,
 
