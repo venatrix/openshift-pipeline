@@ -50,6 +50,8 @@ create
 Do the same in project `dev`
 
 To create a deployment configuration in the `stage` project that points to the image from development project, create a service and route:
+To check the `<<RegistryServiceIP>>` :-
+project `dev` > builds > images - docker repo 
 ```
 oc create deploymentconfig myapp --image=<<RegistryServiceIP>>:5000/dev/myapp:promote
 ```
