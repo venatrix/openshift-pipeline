@@ -36,7 +36,9 @@ create a new Build Configuration and Deployment Configuration in `cicd project` 
 php template > advanced option 
 Name:myphp
 Git Repository URL:https://github.com/venatrix/bg-demo.git
+```
 #uncheck following options, so jenkins can control the bc & dc
+```
 In Build Configuration:-
     Automatically build a new image when the builder image changes
     Launch the first build when the build configuration is created
