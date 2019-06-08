@@ -76,7 +76,7 @@ project `dev` > builds > images - docker repo
 ```
 oc create deploymentconfig myapp --image=<<RegistryServiceIP>>:5000/dev/myapp:promote
 ```
- edit dc myapp on `project satage` and make the following changes
+ edit dc myapp on `project stage` and make the following changes
  
 ```
 from
